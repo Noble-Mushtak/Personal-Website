@@ -32,8 +32,11 @@ SECRET_KEY = secrets.SECRET_KEY
 # Set DJANGO_DEBUG=True environment variable to run in debug mode
 DEBUG = os.environ.get("DJANGO_DEBUG", "") == "True"
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.0.86"]
+# Domain name
+SITE_HOST = "noblemushtak.pythonanywhere.com"
+SITE_DOMAIN = f"https://{ SITE_HOST }"
 
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.0.86", SITE_HOST]
 
 # Application definition
 
@@ -132,6 +135,3 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = []
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-# Domain name
-SITE_DOMAIN = "https://noblemushtak.pythonanywhere.com"
