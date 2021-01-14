@@ -14,9 +14,9 @@ import os
 from pathlib import Path
 # Use mock_secrets when running this code locally
 if os.environ.get('DJANGO_LOCAL', '') == "True":
-    import website.mock_secrets as secrets
+    from . import mock_secrets as secrets
 else:
-    import website.secrets as secrets
+    from . import secrets as secrets
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
