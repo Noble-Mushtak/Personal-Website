@@ -1,0 +1,11 @@
+{% extends "blog/post.html" %}
+{% load static %}
+
+{% block content %}
+<p>The following is a math puzzle I wrote a month ago for my high school's Gifted and Talented students. Have fun trying to solve it!</p><p>Consider the wave \(M\cos(t)+N\sin(t)\)</p><p>Let the amplitude of this wave be \(A\) and the phase shift be \(s\).</p><p>Thus, \(M\cos(t)+N\sin(t)=A\cos(t-s)\)</p><p>Solve for \(A\) and \(s\) in terms of \(M\) and \(N\) so that the above equation is true for all real numbers \(t\).</p><details><summary>Click here for solution.</summary><p>Because these equations are true for all values of \(t\), we can plug in any values we want. First, let's plug in \(t=0\) to solve for \(\cos(s)\):</p>$$M\cos(0)+N\sin(0)=A\cos(t-s)\implies M=A\cos(s)\implies \cos(s)=\frac{M}{A}$$<p>Now, in order to get \(N\), let's plug in \(t=\frac{\pi}{2}\) to solve for \(\cos\left(\frac{\pi}{2}-s\right)=\sin(s)\):</p>$$M\cos\left(\frac{\pi}{2}\right)+N\cos\left(\frac{\pi}{2}\right)=A\cos\left(\frac{\pi}{2}-s\right)\implies N=A\sin(s)\implies \sin(s)=\frac{N}{A}$$<p>Now, knowing that \(\cos\) represents "adjacent over hypotenuse" and \(\sin\) represents "opposite over hypotenuse", we can draw a right triangle where \(M\) is the adjacent side to angle \(s\), \(N\) is the opposite side to angle \(s\), and \(A\) is the hypotenuse. Thus, we can use Pythagorean theorem to solve for \(A\):</p>$$M^2+N^2=A^2\implies A=\sqrt{M^2+N^2}$$<p>Finally, we can use <a href="https://www.geeksforgeeks.org/java-lang-math-atan2-java/">\(\text{atan2}\)</a> to solve for \(s\) in terms of the "opposite," \(N\), and the "adjacent," \(M\):</p>$$s=\text{atan2}(N, M)$$<p>Finally, to put it all together, we have the following identity:</p>$$M\cos(t)+N\sin(t)=\sqrt{M^2+N^2}\cos(t-\text{atan2}(N, M))$$<p>For fun, we can also verify that \(A\cos(t-s)\) for these values of \(A\) and \(s\) is truly equivalent to \(M\cos(t)+N\sin(t)\) by expanding the first expression using cosine-subtraction identity:</p>$$A\cos(t-s)=A\cos(s)\cos(t)+A\sin(s)\sin(t)=M\cos(t)+N\sin(t)$$</details>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+{% include "blog/math-puzzle-scripts.html" %}
+{% endblock %}

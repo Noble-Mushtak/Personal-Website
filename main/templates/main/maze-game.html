@@ -1,0 +1,45 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title3 %}{% block title2 %}{% block title1 %}Maze Game{% endblock %}{% endblock %}{% endblock %}
+
+{% block description3 %}{% block description2 %}{% block description1 %}Play a fun game with a maze and some colored blocks!{% endblock %}{% endblock %}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" type="text/css" href="{% static "css/maze-game.css" %}"/>
+{% endblock %}
+
+{% block body %}
+<div class="underline" id="heading">Maze Game</div>
+<p>This is a game I made years ago which I've mostly kept here for my own nostalgia. Enjoy!</p>
+Rules:
+<ul>
+<li>Press the game below and use the arrow keys below (press to move once, hold to move rapidly) or arrow keys on your keyboard to start playing.</li>
+<li>Collect one yellow block to increment your score by 1. The number of blocks collected is shown in the "Blocks Collected:" statistic on the right.</li>
+<li>After your first move, every second, your score will decrement by 2/3. The number of seconds passed while playing the game is shown in the "Time Passed:" statistic on the right.</li>
+<li>Click the "PAUSE GAME" button or press Shift to pause the game. This will stop the score from decrementing until you make another move, at which the score decrements by 2/3 every second.</li>
+<li>If you leave the maze by going off the edge (i.e. going left when you're at the leftmost part of the screen), your score will go down by 0.25 for every yellow block that is on the screen at the time. The number of blocks missed like this is shown in the "Blocks Missed:" statistic on the right.</li>
+<li>You can not go back to previous mazes because once you leave a maze, it is destroyed and lost forever. If you try (i.e. going left when you're at the leftmost part of the screen and then going right), you will end up at a completely different maze.</li>
+<li>The score displayed is always rounded to the nearest integer.</li>
+<li><strong>On mobile devices, zooming in on the game will not work.</strong> This is to prevent accidentally zooming in or highlighting text when you simply meant to press the buttons. Thus, to zoom in, you must zoom in on the rules and then scroll down to the game.</li>
+</ul>
+<p>Enjoy!</p>
+<div tabindex="0" id="game-container" class="btn btn-success">
+<div id="up" class="btn btn-primary">UP</div>
+<div id="down" class="btn btn-primary">DOWN</div>
+<div id="left" class="btn btn-primary">LEFT</div>
+<div id="right" class="btn btn-primary">RIGHT</div>
+<div id="pause" class="btn btn-primary">GAME PAUSED</div>
+<svg id="svg" xmlns="http://www.w3.org/2000/svg">
+    <text id="score" x="0" y="8.75%" fill="black">Score: 0</text>
+    <text id="highscore" x="50%" y="8.75%" fill="black">High Score: 0</text>
+</svg>
+<div class="statistics" id="blocks-collected">Blocks Collected: 0</div>
+<div class="statistics" id="blocks-missed">Blocks Missed: 0</div>
+<div class="statistics" id="time-passed">Time Passed: 0</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "js/maze-game.js" %}"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+/* Make the default font 1.5 times bigger: */
+main {
+    font-size: 1.5em;
+}
+/* Make the heading twice as big: */
+#heading {
+    font-size: 2em;
+}
+/* Make the rules smaller: */
+main li {
+    font-size: 0.8em;
+}
+/* Make the button take up the full screen width and give it some padding and margin on the bottom. Also, make sure the backgorund, border, and lack-of-shadow never changes. */
+.btn-success {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    background-color: #5cb85c !important;
+    border-color: #4cae4c !important;
+    box-shadow: none !important;
+}
+/* This gives the game a green-ish background color and makes it centered within the button, taking up half the button's width. */
+svg {
+    background-color: #1B3;
+    width: 50%;
+    margin: 0 auto;
+}
+/* This gives the arrow/pause buttons and statistics in the game block absolute positioning: */
+.btn-primary, .statistics {
+    position: absolute;
+}
+/* This gives the statistics a bigger font and black text: */
+.statistics {
+    font-size: 1.5em;
+    color: black;
+}

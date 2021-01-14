@@ -1,0 +1,40 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title2 %}{% block title1 %}{{ title }}{% endblock %}{% endblock %}
+
+{% block head_prefix %}{{ block.super }} article: http://ogp.me/ns/article#{% endblock %}
+
+{% block description2 %}{% block description1 %}{{ desc }}{% endblock %}{% endblock %}
+
+{% block head %}
+<meta property="article:author" content="{{ site_domain }}/"/>
+<meta property="article:published_time" content="{{ pubtime }}"/>
+<style>#title { font-size: 1.5em; } #desc, #blog { font-size: 1.2em; } #date { font-size: 1em; text-align: right; } #chat-center { display: none; } #hider { width: 100%; margin-bottom: 1em; } {% block style %}{% endblock %}</style>
+<link rel="stylesheet" href="{% static "css/popups.css" %}"/>
+<link rel="stylesheet" href="{% static "css/chat-center.css" %}"/>
+{% endblock %}
+
+{% block main_attrs %}itemscope itemtype="http://schema.org/BlogPosting"{% endblock %}
+
+{% block itemprops %}
+<div itemprop="headline" class="center" id="title">{{ title }}</div>
+<div itemprop="description" class="center" id="desc">{{ subtitle }}</div>
+{% endblock %}
+
+{% block body %}
+<div id="date" itemprop="author creator" itemscope itemtype="http://schema.org/Person">Written on <time datetime="{{ pubtime }}">{{ pubtime_obj|date:"F  j, Y" }}</time> by <span itemprop="name">Noble Mushtak</span></div><br/>
+<div id="blog" itemprop="articleBody">{% block content %}{% endblock %}</div><br/>
+<button class="btn btn-success" id="hider">Click here to show the Chat Center.</button>
+<div id="chat-center">
+{% include "main/chats.html" %}
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "js/purify.min.js" %}"></script>
+<script src="{% static "js/popups.js" %}"></script>
+<script>var chatDisplayRatio = 2/5, commentPosterRatio = 2/15;</script>
+<script src="{% static "js/chat-center.js" %}"></script>
+<script src="{% static "blog/js/post.js" %}"></script>
+{% endblock %}

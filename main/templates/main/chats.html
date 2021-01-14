@@ -1,0 +1,29 @@
+<div id = "chat-display">
+<button class="chat-item btn btn-success" id="more-comments">Click to load up to 50 more comments.</button>
+{# No-JavaScript comment #}
+<div class="chat-item"><div class="chat-info"><span class="name">Messenger</span></div><br/><div class="comment"><p>Waiting to get the comments...</p><p>If you see this message for a long time, make sure JavaScript is enabled in your browser.</p></div></div>
+</div><br/>
+{# Messages for the user on comment info #}
+<span id = "message"></span><br/>
+
+{# Form to submit comment #}
+<form name = "commentPoster" id = "comment-poster" autocomplete="off">
+{# Text and name #}
+<div class="form-group">
+<textarea name = "text" class = "form-element form-control" placeholder = "Type your comment here!"></textarea><br/>
+<input name = "name" class = "form-element form-control" placeholder = "Type your name here!" /><br/>
+</div>
+{# Button to Submit #}
+<input type = "submit" class="btn btn-success" id = "submitter" value = "Submit Comment" />
+{# Formatting #}
+<div class="form-group" id="on-left-only">
+<div class="radio"><label for="html-formatting"><input name = "formatting" class = "form-element formatting" id="html-formatting" type = "radio" value = "0" />Use HTML Formatting</label></div><br/>
+<div class="radio"><label for="reg-formatting"><input name = "formatting" class = "form-element formatting" id="reg-formatting" type = "radio" value = "1" checked />Use Regular Formatting</label></div>
+</div>
+
+{% csrf_token %}
+</form>
+{# Tells info about formatting #}
+<ul id = "info-element"></ul><br/>
+
+<p id="policy">Remember that this is simply a light-hearted chat center where everyone is anonymous and can pretend to be whoever they want, so don't take things too seriously and have fun! (I reserve the right to edit or delete any chat comment, especially if the comment is spam or offensive.) Also, you can read the <a href="{% url "main:privacy_policy" %}">Privacy Policy here</a>.</p>

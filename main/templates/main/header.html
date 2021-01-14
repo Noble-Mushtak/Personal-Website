@@ -1,0 +1,28 @@
+{# The <header> tag of every Web page #}
+<header>
+<nav class="center navbar navbar-default">
+<div class="container-fluid">
+
+<div id="home-page">
+  <a href="{% url "main:index" %}" title="Home Page">Noble Mushtak</a>
+</div>
+
+<ul class="nav navbar-nav">
+  <li class="col-md-5 col-xs-5 dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Blog</a>
+    <ul class="dropdown-menu col-xs-10 col-md-10">
+      <li><a href="{% url "blog:index" %}" title="A list of all of the blog posts">Blog Home</a></li>
+      <li><a href="{% url "blog:rss_feed" %}" title="An RSS Feed to help you keep up with blog posts">RSS Feed</a></li>
+    </ul>
+  </li>
+  <li class="col-md-5 col-xs-5 dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Random</a>
+    <ul class="dropdown-menu col-md-10 col-xs-10">
+      <li><a title="A place where you can chat with everyone else on the site!" href="{% url "main:chat_center" %}">Chat Center</a></li>
+      <li><a title="Play a fun maze game!" href="{% url "main:maze_game" %}">Maze Game</a></li>
+    </ul>
+  </li>
+</ul>
+</div>
+</nav>
+</header>

@@ -1,0 +1,6 @@
+/**
+ * By Noble H. Mushtak
+ * In Public Domain
+ * NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
+ */
+.popups-invisible{display:none}#popups-box{border:1px solid #000;position:fixed;top:20%;left:10%;right:10%;overflow:auto;background:#fff;padding:10px;box-shadow:0 0 10px #000;z-index:1}.popups-message{border:1px solid rgba(0,0,0,.3);padding:5px;margin:10px}.popups-prompt{font-family:Arial,sans-serif;width:calc(100% - 5px);height:50px}

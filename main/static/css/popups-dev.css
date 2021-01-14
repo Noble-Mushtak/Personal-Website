@@ -1,0 +1,29 @@
+/* Make elements with class invisible invisible: */
+.popups-invisible {
+    display: none;
+}
+/* Container for All Alerts/Confirms/Prompts: Give the box a small border, make it fixed positioned, make it centered on the screen with 10% space on each side, move it down 20%, give it a scrollbar and a white background, some space on the insides, and a shadow on all sides, and put it on top of all regular elements. */
+#popups-box {
+    border: 1px solid black;
+    position: fixed;
+    top: 20%;
+    left: 10%;
+    right: 10%;
+    overflow: auto;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 0 10px black;
+    z-index: 1;
+}
+/* The Alert/Confirm/Prompt Box: Give it a faint black border and some space on the insides and the outsides */
+.popups-message {
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    margin: 10px;
+}
+/* <textarea>s in prompts: Give it an Arial font, make it take up all of the width except 5 pixels, and give it a height of 50 pixels. */
+.popups-prompt {
+    font-family: Arial, sans-serif;
+    width: calc(100% - 5px);
+    height: 50px;
+}

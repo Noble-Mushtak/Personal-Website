@@ -1,0 +1,63 @@
+/* Import Jaldi font */
+@import url("//fonts.googleapis.com/css?family=Jaldi");
+/* Everything Must be Block */
+* {
+    display: block;
+}
+/* Give the whole page a white background, the Jaldi font, and make everything centered: */
+rss {
+    background-color: white;
+    font-family: Jaldi, sans-serif;
+    text-align: center;
+}
+/* Give each individual entry and the lastBuildDate before all of that some space on the bottom: */
+item, lastBuildDate {
+    margin-bottom: 2%;
+}
+/* Give titles a bigger font: */
+title {
+    font-size: 2em;
+}
+/* Give the title at the top a gray background and space on the insides and outsides: */
+channel > title {
+    background-color: #EEEEEE;
+    padding: 5px;
+    margin: 5px;
+}
+/* Give the pubDates an explanation before its content: */
+pubDate::before {
+    content: "This was published on (time in GMT): ";
+}
+/* Give the lastBuildDate an explanation before its content: */
+lastBuildDate::before {
+    content: "This feed was last modified on (time in GMT): ";
+}
+/* Give links, pubDates, and lastBuildDates a slightly bigger font: */
+lastBuildDate, pubDate, link {
+    font-size: 1.1em;
+}
+/* 
+/* Give links a greenish color and a (black) explanation before its content (however, don't give the explanation to link[rel=self], which would be invisible otherwise) */
+link {
+    color: #B0B000;
+}
+link:not([rel=self])::before {
+    content: "Copy this link: ";
+    color: black;
+}
+/* Make the link the user is hovering over black-on-white underlined text and make the explanation invisible: */
+link:hover {
+    color: black;
+    text-decoration: underline;
+}
+link:hover::before {
+    display: none;
+}
+/* Give descriptions a bigger font: */
+description {
+    font-size: 1.4em;
+}
+/* Don't show guids */
+guid {
+    display: none;
+}

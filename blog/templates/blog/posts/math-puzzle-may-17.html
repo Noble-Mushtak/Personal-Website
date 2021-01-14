@@ -1,0 +1,20 @@
+{% extends "blog/post.html" %}
+{% load static %}
+
+{% block content %}
+<p>The following was a puzzle presented to Marshwood GT students on May 17, 2019. Have fun doing math!</p>
+
+<p>Draw the following shape without lifting your pencil. You are not allowed to draw over any segment of the shape more than once, although you are allowed to cross the same point multiple times.</p>
+
+<div class="center"><img src="{% static "blog/img/math-puzzle-may-17-shape.png" %}"/></div>
+
+<details>
+<summary>Click here to see a hint.</summary>
+<p>In mathematics, drawing shapes without lifting your pencil relates to a concept known as "Euler paths" in graphs. It is a well-known theorem that non-cyclic Euler paths (i.e. Euler paths that do not begin and end at the same point) always begin and end at points where an odd number of lines meet. If you want to learn more about Euler paths, read <a href="http://discrete.openmathbooks.org/dmoi2/sec_paths.html">this article</a>.</p>
+</details>
+{% endblock %}
+
+{% block scripts %}
+{{ block.super }}
+{% include "blog/math-puzzle-scripts.html" %}
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title3 %}{% block title2 %}{% block title1 %}Chat Center{% endblock %}{% endblock %}{% endblock %}
+
+{% block description3 %}{% block description2 %}{% block description1 %}A chat applet made by Noble Mushtak. Enjoy!{% endblock %}{% endblock %}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/popups.css" %}"/>
+<link rel="stylesheet" href="{% static "css/chat-center.css" %}"/>
+{% endblock %}
+
+{% block body %}
+{% include "main/chats.html" %}
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "js/purify.min.js" %}"></script>
+<script src="{% static "js/popups.js" %}"></script>
+<script>var chatDisplayRatio = 3/4, commentPosterRatio = 2/15;</script>
+<script src="{% static "js/chat-center.js" %}"></script>
+<script>loadChatCenter();</script>
+{% endblock %}

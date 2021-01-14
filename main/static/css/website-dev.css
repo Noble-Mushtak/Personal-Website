@@ -1,0 +1,99 @@
+/* White background, default Jaldi font, and horizontal padding */
+body {
+    padding: 0% 1% 0% 1%;
+    background-color: white;
+    font-family: 'Jaldi', serif;
+}
+/* Make the Creative Commons notice white-on-green text,
+   take up the whole screen width, and be at the bottom.
+   Also, put the CC notice above regular elements. */
+#cc-notice {
+    background-color: green;
+    color: white;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    font-size: 1.5em;
+}
+/* Make sure the space for the creative commons notice at the bottom does not interfere with floats: */
+#cc-space {
+    clear: both;
+}
+/* Make the CC logo take up the same height as the text next to it: */
+#cclogo {
+    height: 1em;
+}
+/* Give all paragraphs space on the bottom */
+p {
+    margin-bottom: 1em;
+}
+/* Center */
+.center {
+    text-align: center;
+}
+/* Underline (not inserted text for <ins>) */
+.underline {
+    text-decoration: underline;
+}
+/* Whole Heading: Inherit background (from body) and make the border thicker */
+nav {
+    background-color: inherit !important;
+    border-width: 5px !important;
+}
+/* Gray Heading: Take up full-width, give gray background color, give space on all sides, give padding on all sides, no underline, and bigger font size */
+#home-page {
+    width: 100%;
+    background-color: #EEEEEE;
+    margin: 5px;
+    padding: 5px;
+    text-decoration: none;
+    font-size: 1.7em;
+}
+/* Heading links must be black */
+header a {
+    color: black !important;
+}
+/* Give the heading navigation full width */
+ul.nav {
+    width: 100%;
+}
+/* Give heading dropdowns bigger font and horizontal margin. */
+header ul.nav > li {
+    font-size: 1.5em !important;
+    margin: 0% 4%;
+}
+/* Ignore text-decoration for heading dropdown links: */
+header ul.nav a:hover {
+    text-decoration: none;
+}
+/* Push dropdown menus to the right, center their text, and give them the same font size as their parents: */
+ul.dropdown-menu {
+    left: 9%;
+    text-align: center;
+    font-size: inherit;
+}
+/* Give dropdown items a gray background color when hovered over: */
+.dropdown-toggle:hover {
+    background-color: #E7E7E7 !important;
+}
+/* Links: Green by default and when visited, underlined when hovered over */
+a:link, a:visited {
+    color: #B0B000;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+/* Give all code blocks some space on all sides: */
+pre {
+    margin: 5px;
+}
+/* Make all summary elements display flex and make space-fillers inside summaries take up the unfilled space in summary elements */
+summary {
+    display: flex;
+}
+summary .space-filler {
+    flex-grow: 1;
+}

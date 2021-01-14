@@ -1,0 +1,59 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block head_prefix %}{{ block.super }} profile: http://ogp.me/ns/profile#{% endblock %}
+
+{% block title3 %}{% block title2 %}{% block title1 %}Noble Mushtak{% endblock %}{% endblock %}{% endblock %}
+
+{% block title_suffix %}{% endblock %}
+
+{% block description3 %}{% block description2 %}{% block description1 %}Welcome to the personal website of Noble Mushtak, a computer science student at Northeastern.{% endblock %}{% endblock %}{% endblock %}
+
+{% block head %}
+<meta property="og:image" content="{% static "img/favicon.ico" %}"/>
+<meta property="og:image:width" content="48">
+<meta property="og:image:height" content="48">
+<meta property="og:image:type" content="image/x-icon">
+<meta property="profile:first_name" content="Noble"/>
+<meta property="profile:last_name" content="Mushtak"/>
+<meta property="profile:username" content="Noble Mushtak"/>
+<style>main { font-size: 1.7em; margin-left: 10%; margin-right: 10%; }{# main ul { font-size: 0.7em; text-align: left; } #}</style>
+{% endblock %}
+
+{% block pre_main %}
+{# Shortened Link for Sharing: <a href="https://rebrand.ly/nhmsite">rebrand.ly/nhmsite</a> #}
+{% endblock %}
+
+{% block body %}
+<p>Hello! I'm Noble Mushtak and welcome to my Web site!</p>
+
+<p>I am currently a second-year undergraduate at Northeastern majoring in computer science and maths. I like learning new programming languages (recently I've been <a href="https://doc.rust-lang.org/book/">enjoying Rust</a>) and I'm interested in programming language research. I also enjoy <a href="http://mathserver.neu.edu/robin/Putnam/">Putnam problems</a> and <a href="https://codeforces.com/profile/Noble_Mushtak">competitive programming</a>.</p>
+
+<p>If you'd like to learn more about my past work, you can check out <a href="https://github.com/Noble-Mushtak">my GitHub</a> or read <a href="{% static "resume.pdf" %}">my resume here</a>.</p>
+
+<p>I am looking for a co-op for July-December 2021. If you are interested in hiring me, please contact me at <a href="mailto:mushtak.n@northeastern.edu">mushtak.n@northeastern.edu</a>.</p>
+
+{% comment %}
+<div id="Competitive-Mathematics"><a href="#Competitive-Mathematics">I am a mathlete</a> who has participated in many competitions since middle school:</div>
+<ul>
+<li>September 2012-August 2013 (Sixth Grade): Placed Fifth for Albany Chapter <a href="https://www.mathcounts.org/">MathCounts</a>; Qualified for New York State MathCounts; Tied for First for Seventh Grade in <a href="https://web.archive.org/web/20151011011840/http://mathleague.com/downloads/gs1213/ny-678-1213.pdf">New York Mathematics League</a></li>
+<li>September 2013-August 2014 (Seventh Grade): Placed Second for Albany Chapter MathCounts; Qualified for New York State MathCounts; Tied for Second in Eighth Grade in <a href="https://web.archive.org/web/20151011011914/http://mathleague.com/downloads/gs1314/ny-678-1314.pdf">New York Mathematics League</a></li>
+<li>September 2014-August 2015 (Eighth Grade): Tied for Eleventh in <a href="https://web.archive.org/web/20151224191028/http://www.pi-cone.org/ind_standings.asp?year=2015">Pi-Cone South League</a>; Tied for <a href="https://web.archive.org/web/20151010164210/http://maml.net/Statemeet2015indv.pdf">Thirty-First in State Meet</a> of <a href="http://maml.net/">Maine Association of Math Leagues (MAML)</a>; Tied for 66th in <a href="http://wocomal.org/statistics/neaml/2015/2015n_individual.php">New England Championship Math Meet</a></li>
+<li>September 2015-August 2016 (Ninth Grade): 4th in <a href="http://www.pi-cone.org/ind_standings.asp?year=2016">Pi-Cone South</a> and 12th in <a href="http://web.archive.org/web/20160408115334/http://www.maml.net:80/indv.htm">MAML</a>; Got 3 out of 10 on <a href="http://www.arml.com/">ARML</a> Maine Team B1; 1st in Maine and Tied for 6th Place in <a href="https://web.archive.org/web/20160410123730/http://mathleague.com/downloads/hs1516/ne-hs6-1516.pdf">New England Mathematics League</a>; Got 111 on <a href="http://www.maa.org/math-competitions/amc-contests/amc-1012">AMC 10B</a> and Qualified for <a href="http://www.maa.org/math-competitions/amc-contests/invitational-competitions">AIME</a> (Did Not Participate in AIME); Tied for 91st in <a href="http://wocomal.org/statistics/neaml/2016/2016n_individual.php">New England Championship Math Meet</a></li>
+<li>September 2016-August 2017 (Tenth Grade): 2nd in <a href="http://pi-cone.org/ind_standings.asp?year=2017">Pi-Cone South</a> and 2nd in <a href="http://web.archive.org/web/20170703202539/http://maml.net/indv.htm">MAML</a>; Got 6 out of 10 on ARML Maine Team B1; 1st in Maine and Tied for 4th Overall in <a href="http://www.themathleague.com/downloads/hs1617/ne-hs6-1617.pdf">New England Mathematics League</a></li>
+<li>September 2017-August 2018 (Eleventh Grade): 2nd in <a href="http://www.pi-cone.org/ind_standings.asp?year=2018">Pi-Cone South</a> and 5th in <a href="https://web.archive.org/web/20180913235150/maml.net/indv.htm">MAML</a>; Got 4 out of 10 on ARML Maine Team B1; Tied for 1st in Maine and 10th Overall in <a href="http://www.themathleague.com/downloads/hs1718/ne-hs6-1718.pdf">New England Mathematics League</a></li>
+<li>September 2018-August 2019 (Twelfth Grade): 1st in <a href="http://www.pi-cone.org/ind_standings.asp?year=2019">Pi-Cone South</a> and 2nd in <a href="https://web.archive.org/web/20190418150914/http://www.maml.net/indv.htm">MAML</a>; Got 5 out of 10 on ARML Maine Team B1; High-Scoring Student in <a href="https://www.themathleague.com/downloads/hs1819/ne-hs6-1819.pdf">New England Mathematics League</a></li>
+<li>September 2019-August 2020 (Freshman in College): Scored 39 out of 120 and placed in the top-192 students in <a href="https://www.maa.org/sites/default/files/pdf/Putnam/2019/AnnouncementOfWinners2019.pdf">Putnam 2019</a></li>
+</ul>
+
+<div id="Competitive-Programming"><a href="#Competitive-Programming">I am also a competitive programmer</a> who has participated in quite a few competitions:</div>
+<ul>
+<li>September 2014-August 2015 (Eighth Grade): <a href="https://web.archive.org/web/20150831195525/https://www.codechef.com/users/noble_mushtak">Top 2000 in CodeChef Long and Top 2500 in CodeChef Short/Cook-Off</a>; Went from Bronze to Gold in <a href="http://www.usaco.org/">USACO</a>; <a href="https://www.go-hero.net/jam/15/name/Noble.Mushtak">Qualified for Round 1</a> in <a href="https://code.google.com/codejam/">Google Code Jam</a></li>
+<li>September 2015-August 2016 (Ninth Grade): <a href="http://web.archive.org/web/20160402114637/https://www.codechef.com/users/noble_mushtak">Top 1000 in CodeChef Long</a>; Went from Gold to Platinum in <a href="http://www.usaco.org/">USACO</a>; <a href="https://www.go-hero.net/jam/16/name/Noble.Mushtak">Almost Qualified for Round 2</a> in Google Code Jam; <a href="https://web.archive.org/web/20170107202314/http://codeforces.com/profile/Noble_Mushtak">Specialist in CodeForces</a>; Qualified for Platinum Regionals and Won Third Place State Award in <a href="https://www.uscyberpatriot.org/home">CyberPatriot</a></li>
+<li>September 2016-August 2017 (Tenth Grade): <a href="http://web.archive.org/web/20170417180255/https://www.codechef.com/users/noble_mushtak">5 Stars and Top 900 in CodeChef Long</a>; <a href="https://www.go-hero.net/jam/17/name/Noble.Mushtak">Placed in Top 1200 in Round 2</a> in Google Code Jam; First in Maine, Sixth in Northeast in CyberPatriot Platinum Regionals; Placed First in <a href="http://www.projectlogin.com/news/post/tyler-technologies-celebrates-2017-maine-app-challenge-winners">Maine App Challenge</a></li>
+<li>September 2017-August 2018 (Eleventh Grade): <a href="https://web.archive.org/web/20181006174920/https://www.codechef.com/users/noble_mushtak">5 Stars and Top 1000 in CodeChef Long</a>; Placed in Top 2500 in Round 2 of Google Code Jam; First in Maine and Northeast, Thirty-Eighth in Nation in CyberPatriot Platinum Semifinals; Placed Third in <a href="https://bangordailynews.com/bdn-maine/community/tyler-technologies-names-winners-of-2018-maine-app-challenge/">Maine App Challenge</a></li>
+<li>September 2018-August 2019 (Twelfth Grade): Placed in Top 2500 in Round 2 of Google Code Jam; Placed First in Nation on Cisco Networking Challenge in CyberPatriot States; First in Maine and Northeast, Thirty-Second in Nation in CyberPatriot Platinum Semifinals; Went from Specialist to Expert on <a href="https://web.archive.org/web/20190824201716/https://codeforces.com/profile/Noble_Mushtak">CodeForces</a></li>
+<li>September 2019-August 2020 (Freshman in College): Placed 1001st in Google Code Jam Round 2; Placed 7th in <a href="https://hc3.seas.harvard.edu/hc3/bospre/scoreboard.web">BOSPRE 2019</a>; Went from Expert to Candidate Master on <a href="https://codeforces.com/profile/Noble_Mushtak">CodeForces</a></li>
+</ul>
+{% endcomment %}
+{% endblock %}

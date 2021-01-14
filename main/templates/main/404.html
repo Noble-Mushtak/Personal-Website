@@ -1,0 +1,20 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title3 %}{% block title2 %}{% block title1 %}File Not Found{% endblock %}{% endblock %}{% endblock %}
+
+{% block seo_head %}{% endblock %}
+
+{% block head %}
+<style>#heading { font-size: 2em; } p { font-size: 1.5em; }</style>
+{% endblock %}
+
+{% block main_attrs %}{% endblock %}
+
+{% block itemprops %}{% endblock %}
+
+{% block body %}
+<p id="heading">Whoops!</p>
+<p>We couldn't find any web page to show you at this address. We're not sure how you got here, but please return to the <a href="/">home page</a>. Thanks!</p>
+<p>Nerd Message: <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP">HTTP</a> Response Code: 404 (File Not Found)</p>
+{% endblock %}

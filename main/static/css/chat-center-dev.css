@@ -1,0 +1,67 @@
+/* Give the chat display a white background, a black border, and a scrollbar */
+#chat-display {
+    background-color: white;
+    border: solid 1px;
+    overflow: auto;
+}
+/* Box Around Whole Comment: Give it space around itself, make it take up 99% of the width of the chat display, and give it a black border. */
+.chat-item {
+    margin: 10px 5px;
+    width: 99%;
+    border-radius: 5px;
+    border: solid 1px;
+}
+/* Box Around People's Names and Comment Times: Make it inline block, give it a pinkish-background, give it space on the horiziontal insides, make it 5 pixels lower and to the left, and give it a light gray solid border. */
+.chat-info {
+    display: inline-block;
+    background-color: #DDEEDD;
+    padding: 0 20px;
+    margin-left: 5px;
+    margin-top: 5px;
+    border-radius: 2px;
+    border: solid 1px #AAAAAA;;
+}
+/* Move people's comments a bit to the left: */
+.comment {
+    margin-left: 2px;
+}
+/* Make the form have a white background and some space around its insides: */
+#comment-poster {
+    background-color: white;
+    padding: 5px;
+}
+/* Give some vertical space around the form elements: */
+.form-element {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+/* Make the formatting info black-on-white text: */
+#info-element {
+    background-color: white;
+}
+/* Place the formatting info to the left: */
+#info-element > * {
+    margin-left: 4.4%;
+}
+/* Make elements of code have a fixed-width font: */
+.code {
+    font-family: "Lucida Console", Monaco, monospace;
+}
+/* Make .mini have a smaller font size than normal: */
+.mini {
+    font-size: 0.75em;
+}
+/* Make #on-left-only not take up a whole row: */
+#on-left-only, #on-left-only * {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* Put the submit button in the form on the right */
+#submitter {
+    float: right;
+}
+/* Make the font of the policy notice a bit bigger than normal */
+#policy {
+    font-size: 1.2em;
+}

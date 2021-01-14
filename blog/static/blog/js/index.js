@@ -1,0 +1,6 @@
+/**
+ * By Noble H. Mushtak
+ * In Public Domain
+ * NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
+ */
+var goBack=document.getElementById("goBack"),goForward=document.getElementById("goForward");goBack.addEventListener(mouseevents.click,function(){blogPosts&&setLinks(-links.length)}),goForward.addEventListener(mouseevents.click,function(){blogPosts&&setLinks(links.length)});var blogPosts=JSON.parse(document.getElementById("directory-info").textContent),notice=document.getElementById("notice"),links=document.querySelectorAll("#desc a"),shift=0;function setLinks(t){t&&shift+t>=0&&shift+t<blogPosts.length&&(shift+=t),shift-links.length>=0?goBack.style.display="block":goBack.style.display="none",shift+links.length<blogPosts.length?goForward.style.display="block":goForward.style.display="none";for(var e=0;e<links.length;e++)blogPosts.length>shift+e?(links[e].style.display="inline",links[e].href="/blog/"+blogPosts[shift+e].slug,links[e].textContent=blogPosts[shift+e].title):links[e].style.display="none"}setLinks();

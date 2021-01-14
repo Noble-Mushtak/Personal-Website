@@ -1,0 +1,31 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+{% block title3 %}{% block title2 %}{% block title1 %}Blog{% endblock %}{% endblock %}{% endblock %}
+
+{% block description3 %}{% block description2 %}{% block description1 %}Welcome to Noble Mushtak's blog, which focuses on programming and maths.{% endblock %}{% endblock %}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static "css/popups.css" %}"/>
+<link rel="alternate" href="/Blog/RSS-Feed.rss"/>
+<style>#desc { font-size: 1.5em; } #desc a { font-size: 1.2em; } #goBack, #goForward { font-size: 1.2em; display: none; } #goBack:hover, #goForward:hover { text-decoration: underline; } #goBack { float: left; } #goForward { float: right; }</style>
+{% endblock %}
+
+{% block body %}
+<div class="center" id="desc">
+Welcome to my blog! Have fun reading!
+<div><a href=""></a></div><div><a href=""></a></div><div><a href=""></a></div><div><a href=""></a></div><div><a href=""></a></div><div><a href=""></a></div><div><a href=""></a></div><div><a href=""></a></div>
+</div>
+
+<div id="goBack">See Later Blog Posts</div>
+<div id="goForward">See Previous Blog Posts</div>
+<br/>
+<br/>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static "js/DOMParser.js" %}"></script>
+<script src="{% static "js/popups.js" %}"></script>
+{{ directory_info|json_script:"directory-info" }}
+<script src="{% static "blog/js/index.js" %}"></script>
+{% endblock %}

@@ -1,0 +1,6 @@
+/**
+ * By Noble H. Mushtak
+ * In Public Domain
+ * NO WARRANTY EXPRESSED OR IMPLIED. USE AT YOUR OWN RISK.
+ */
+body{padding:0 1% 0 1%;background-color:#fff;font-family:Jaldi,serif}#cc-notice{background-color:green;color:#fff;position:fixed;width:100%;left:0;bottom:0;z-index:1;font-size:1.2em}#cc-space{clear:both}#cclogo{height:1em}p{margin-bottom:1em}.center{text-align:center}.underline{text-decoration:underline}nav{background-color:inherit!important;border-width:5px!important}#home-page{width:100%;background-color:#eee;margin:5px;padding:5px;text-decoration:none;font-size:1.7em}header a{color:#000!important}ul.nav{width:100%}header ul.nav>li{font-size:1.5em!important;margin:0 4%}header ul.nav a:hover{text-decoration:none}ul.dropdown-menu{left:9%;text-align:center;font-size:inherit}.dropdown-toggle:hover{background-color:#e7e7e7!important}a:link,a:visited{color:#b0b000;text-decoration:none}a:hover{text-decoration:underline}pre{margin:5px}summary{display:flex}summary .space-filler{flex-grow:1}
