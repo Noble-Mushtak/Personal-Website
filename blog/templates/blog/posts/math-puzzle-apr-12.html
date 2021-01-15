@@ -2,7 +2,56 @@
 {% load static %}
 
 {% block content %}
-<p>The following was a puzzle presented to Marshwood GT students on April 12, 2019. Have fun doing math!</p><p>In Algebra II, students are often taught that circles, ellipses, hyperbolas, and parabolas are "conic sections" because they are cross-sections of a cone, as shown below:</p><div class="center"><img src="{% static "blog/img/math-puzzle-apr-12-fig1.png" %}"/></div><p>(Image courtesy of <a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/conic-sections-and-standard-forms-of-equations">Varsity Tutors</a>)</p><p>However, when we define these shapes, we don't use any reference to the fact that they are cross sections of a cone:</p><ul><li>A circle is defined as the locus of all points equidistant from the center.</li><li>An ellipse is defined as the locus of all points such that the sum of the distances from the two foci are constant.</li><li>A hyperbola is defined as the locus of all points such that the difference of the distances from the two foci are constant.</li><li>A parabola is defined as the locus of all points such that the distance from the directrix equals the distance from the focus.</li></ul><p>How do these shapes have a focus and a directrix when they are just cross sections of a cone? The formal definitions of cross sections and the fact that they are cross sections of a cone seem completely unrelated to each other! Therefore, today, we are going to connect these two facts about mathematics by proving the above definition of an ellipse using the fact that they are cross sections of a cone.</p><p><strong>Part 0:</strong> To prove any of these definitions, we first need to learn about Dandelin spheres. These are the spheres which are tangent both to the cone and to the plane containing the cross section. For example, these are the Dandelin spheres for an ellipse:</p><div class="center"><img src="{% static "blog/img/math-puzzle-apr-12-fig2.png" %}"/></div><p>(Image courtesy of <a href="https://commons.wikimedia.org/wiki/File:Dandelin_spheres.svg">Wikimedia</a>)</p><p>Now, there's a lot of intimidating labeling and lines on here! However, for now, ignore all the labeled points! Instead, just focus on the ellipse and the two spheres. Notice how the sphere on top is snug between the cone and plane containing the ellipse. Then, notice how the bottom sphere is also snug between the plane containing the ellipse and the lateral area of the cone. This visually shows you how Dandelin spheres are tangent to both the cone and the plane containing the ellipse. Make sure you understand this fact before moving on.</p><p><strong>Part 1</strong>: Now, let \(P\) be an arbitrary point on the ellipse and let Plane E be the plane containing the ellipse. Then, let the point of tangency of the top sphere to Plane E be \(F_1\) and let the point of tangency of the bottom sphere to Plane E be \(F_2\). Explain why we would want to prove the following:</p>$$PF_1+PF_2=C \text{ for some constant } C$$<p>Before any proof, understanding what you want to prove is always the most important part, so make sure you understand the meaning of the above equation before moving on. It's not obvious why we would want to prove this, but think about the role that \(F_1\) and \(F_2\) play in the above diagram. You may want to review the definition of an ellipse above to better understand this equation.</p><p><strong>Part 2</strong>: Let the vertex of the cone be \(S\). Now, draw a line from \(S\) straight through \(P\). Since the Dandelin spheres are tangent to the cone, this line is going to intersect the surface of the Dandelin spheres at a point of tangency. Let the intersection with the top sphere be \(P_1\) and let the intersection with the bottom sphere be \(P_2\). Now, show that \(P_1P_2\) (i.e. the distance between \(P_1\) and \(P_2\)) is constant, regardless of what point \(P\) you chose on the ellipse.</p><p>Here's a hint:</p>$$P_1P_2=SP_2-SP_1$$<p>\(SP_1\) is a segment from a point outside sphere to a point of tangency on the top Dandelin sphere. \(SP_2\) is a segment from a point outside sphere to a point of tangency on the bottom Dandelin sphere.<p><strong>Part 3</strong>: Finally, show that:</p>$$PF_1+PF_2=P_1P_2$$<p>Here's a hint: \(PF_1\) and \(PP_1\) are both segments from a point outside the sphere to a point of tangency on the top Dandelin sphere.</p><p>Since \(P_1P_2\) is a constant, this is the equation we set out to prove from Part 1, so at this point, we have successfully proven the focus-based definition of an ellipse from the fact that an ellipse is a cross section of a cone.</p>
+<p>The following was a puzzle presented to Marshwood GT students on April 12, 2019. Have fun doing math!</p>
+
+<p>In Algebra II, students are often taught that circles, ellipses, hyperbolas, and parabolas are "conic sections" because they are cross-sections of a cone, as shown below:</p>
+
+<div class="center">
+  <img src="{% static "blog/img/math-puzzle-apr-12-fig1.png" %}" alt="Figure showing how a parabola (top-left), circle (top-right), ellipse (bottom-left), and hyperbola (bottom-right) are all cross sections of a cone"/>
+</div>
+<p>(Image courtesy of <a href="https://www.varsitytutors.com/hotmath/hotmath_help/topics/conic-sections-and-standard-forms-of-equations">Varsity Tutors</a>)</p>
+
+<p>However, when we define these shapes, we don't use any reference to the fact that they are cross sections of a cone:</p>
+
+<ul>
+  <li>A circle is defined as the locus of all points equidistant from the center.</li>
+  <li>An ellipse is defined as the locus of all points such that the sum of the distances from the two foci are constant.</li>
+  <li>A hyperbola is defined as the locus of all points such that the difference of the distances from the two foci are constant.</li>
+  <li>A parabola is defined as the locus of all points such that the distance from the directrix equals the distance from the focus.</li>
+</ul>
+
+<p>How do these shapes have a focus and a directrix when they are just cross sections of a cone? The formal definitions of cross sections and the fact that they are cross sections of a cone seem completely unrelated to each other! Therefore, today, we are going to connect these two facts about mathematics by proving the above definition of an ellipse using the fact that they are cross sections of a cone.</p>
+
+<p><strong>Part 0:</strong> To prove any of these definitions, we first need to learn about Dandelin spheres. These are the spheres which are tangent both to the cone and to the plane containing the cross section. For example, these are the Dandelin spheres for an ellipse:</p>
+
+<div class="center">
+  <img src="{% static "blog/img/math-puzzle-apr-12-fig2.png" %}" alt="Figure depicting Dandelin spheres in a cone"/>
+</div>
+<p>(Image courtesy of <a href="https://commons.wikimedia.org/wiki/File:Dandelin_spheres.svg">Wikimedia</a>)</p>
+
+<p>Now, there's a lot of intimidating labeling and lines on here! However, for now, ignore all the labeled points! Instead, just focus on the ellipse and the two spheres. Notice how the sphere on top is snug between the cone and plane containing the ellipse. Then, notice how the bottom sphere is also snug between the plane containing the ellipse and the lateral area of the cone. This visually shows you how Dandelin spheres are tangent to both the cone and the plane containing the ellipse. Make sure you understand this fact before moving on.</p>
+
+<p><strong>Part 1</strong>: Now, let \(P\) be an arbitrary point on the ellipse and let Plane E be the plane containing the ellipse. Then, let the point of tangency of the top sphere to Plane E be \(F_1\) and let the point of tangency of the bottom sphere to Plane E be \(F_2\). Explain why we would want to prove the following:</p>
+
+$$PF_1+PF_2=C \text{ for some constant } C$$
+
+<p>Before any proof, understanding what you want to prove is always the most important part, so make sure you understand the meaning of the above equation before moving on. It's not obvious why we would want to prove this, but think about the role that \(F_1\) and \(F_2\) play in the above diagram. You may want to review the definition of an ellipse above to better understand this equation.</p>
+
+<p><strong>Part 2</strong>: Let the vertex of the cone be \(S\). Now, draw a line from \(S\) straight through \(P\). Since the Dandelin spheres are tangent to the cone, this line is going to intersect the surface of the Dandelin spheres at a point of tangency. Let the intersection with the top sphere be \(P_1\) and let the intersection with the bottom sphere be \(P_2\). Now, show that \(P_1P_2\) (i.e. the distance between \(P_1\) and \(P_2\)) is constant, regardless of what point \(P\) you chose on the ellipse.</p>
+
+<p>Here's a hint:</p>
+
+$$P_1P_2=SP_2-SP_1$$
+
+<p>\(SP_1\) is a segment from a point outside sphere to a point of tangency on the top Dandelin sphere. \(SP_2\) is a segment from a point outside sphere to a point of tangency on the bottom Dandelin sphere.</p>
+
+<p><strong>Part 3</strong>: Finally, show that:</p>
+
+$$PF_1+PF_2=P_1P_2$$
+
+<p>Here's a hint: \(PF_1\) and \(PP_1\) are both segments from a point outside the sphere to a point of tangency on the top Dandelin sphere.</p>
+
+<p>Since \(P_1P_2\) is a constant, this is the equation we set out to prove from Part 1, so at this point, we have successfully proven the focus-based definition of an ellipse from the fact that an ellipse is a cross section of a cone.</p>
 {% endblock %}
 
 {% block scripts %}

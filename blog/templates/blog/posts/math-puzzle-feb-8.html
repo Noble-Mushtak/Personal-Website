@@ -2,7 +2,60 @@
 {% load static %}
 
 {% block content %}
-<p>The following was a puzzle presented to Marshwood GT students on February 8, 2019. Have fun doing math!</p><p>Evaluate the following:</p>$$\cos(20^\circ)$$<p>You are allowed to use a graphing calculator, but your answer must be <em>exact</em>: Don't just type this into your calculator and round to four decimal places! However, your answer does not need to be simplified.</p><p>Also, the answer is only allowed to contain integers, addition, subtraction, multiplication, division, and square/cube roots. For example, \(\sin(70^\circ)\) is not an acceptable answer because you are not allowed to use the \(\sin\) function and \(\frac{e^{(\pi/9)\sqrt{-1}}+e^{-(\pi/9)\sqrt{-1}}}{2}\) is not an acceptable answer because neither \(e\) nor \(\pi\) are integers.</p><hr/><p><strong>Part 1:</strong> In pre-calculus, you may have seen the triple-angle identity:</p>$$\cos(3\theta)=4\cos^3(\theta)-3\cos(\theta)$$<p>Plug in \(\theta=20^\circ\) and show that:$$4\cos^3(20^\circ)-3\cos(20^\circ)-\frac{1}{2}=0$$</p><hr/><p><strong>Part 2:</strong> If we let \(x=\cos(20^\circ)\), we find that:</p>$$4x^3-3x-\frac{1}{2}=0$$<p>Show that the above polynomial has exactly one positive root.</p><p>Obviously, \(\cos(20^\circ)\) is positive, so whatever the positive root of the above polynomial is must be \(\cos(20^\circ)\). Thus, to find \(\cos(20^\circ)\), we just need to solve this cubic equation.</p><hr/><p><strong>Part 3:</strong> This cubic can be solved using the "Vieta transformation." First, let \(z\) be such that:</p>$$x=z+\frac{1}{4z}$$<p>Next, substitute that into the cubic so that the new equation is in terms of \(z\) instead of \(x\):</p>$$4\left(z+\frac{1}{4z}\right)^3-3\left(z+\frac{1}{4z}\right)-\frac{1}{2}=0$$<p>Manipulate this equation to show that:</p>$$64z^6-8z^3+1=0$$<hr/><p><strong>Part 4:</strong> Use the quadratic formula to find that:</p>$$z^3=\frac{1\pm\sqrt{-3}}{16}$$<hr/><p><strong>Part 5:</strong> Now, let's take a step back for a moment. Consider the following equation:</p>$$z^3=a^3$$<p>Then, show that this equation has three solutions:</p>$$z=a\text{ or }z=a\left(\frac{-1+\sqrt{-3}}{2}\right)\text{ or }z=a\left(\frac{-1-\sqrt{-3}}{2}\right)$$<p>HINT: Use the identity \(z^3-a^3=(z-a)(z^2+az+a^2)\). Then, use the quadratic formula to find the roots of the quadratic factor.</p><hr/><p><strong>Part 6:</strong> Note that:</p>$$\frac{1\pm\sqrt{-3}}{16}=\left(\frac{1}{2}\sqrt[3]{\frac{1\pm\sqrt{-3}}{2}}\right)^3$$<p>Then, apply Part 5 to the equation from Part 4 to show that:</p>$$z=\frac{1}{2}\sqrt[3]{\frac{1\pm\sqrt{-3}}{2}}\text{ or }z=\frac{1}{2}\left(\frac{-1+\sqrt{-3}}{2}\right)\sqrt[3]{\frac{1\pm\sqrt{-3}}{2}}\text{ or }z=\frac{1}{2}\left(\frac{-1-\sqrt{-3}}{2}\right)\sqrt[3]{\frac{1\pm\sqrt{-3}}{2}}$$<p>Notice how, because of the \(\pm\), we actually end up with six solutions for \(z\). This makes sense because, in Part 3, we had a sixth-degree polynomial for \(z\).</p><hr/><p><strong>Part 7:</strong> In Part 3, we said that:</p>$$x=z+\frac{1}{4z}$$<p>Using your calculator, plug in the six solutions for \(z\) into this equation in order to get solutions for \(x\). Some of the values of \(z\) will give the same answer for \(x\), so in the end, you should only have three distinct solutions for \(x\). Again, this makes sense because, in Part 2, we had a third-degree polynomial for \(x\).</p><p>As we said before, \(\cos(20^\circ)\) is whatever the positive solution for \(x\) is. Therefore, to find the exact value of \(\cos(20^\circ)\), find a solution for \(z\) that gives a positive value for \(x\) and then plug that solution into \(x=z+\frac{1}{4z}\) by hand. Again, your answer does not need to be simplified.</p><hr/><p>However, if you do try to simplify your answer, you will realize that you won't be able to get rid of the \(\sqrt{-3}\). This is somewhat bizarre, because although \(\cos(20^\circ)\) is a real number, it can not be expressed in an exact form unless you use complex numbers like \(\sqrt{-3}\). This underscores one reason why complex numbers are important: Sometimes, you need complex numbers in order to find the real solutions to cubic or higher-order polynomials.</p>
+<p>The following was a puzzle presented to Marshwood GT students on February 8, 2019. Have fun doing math!</p><p>Evaluate the following:</p>
+$$\cos(20^\circ)$$
+
+<p>You are allowed to use a graphing calculator, but your answer must be <em>exact</em>: Don't just type this into your calculator and round to four decimal places! However, your answer does not need to be simplified.</p>
+
+<p>Also, the answer is only allowed to contain integers, addition, subtraction, multiplication, division, and square/cube roots. For example, \(\sin(70^\circ)\) is not an acceptable answer because you are not allowed to use the \(\sin\) function and \(\frac{e^{(\pi/9)\sqrt{-1}}+e^{-(\pi/9)\sqrt{-1}}}{2}\) is not an acceptable answer because neither \(e\) nor \(\pi\) are integers.</p>
+<hr/>
+
+<p><strong>Part 1:</strong> In pre-calculus, you may have seen the triple-angle identity:</p>
+$$\cos(3\theta)=4\cos^3(\theta)-3\cos(\theta)$$
+<p>Plug in \(\theta=20^\circ\) and show that:$$4\cos^3(20^\circ)-3\cos(20^\circ)-\frac{1}{2}=0$$</p>
+<hr/>
+
+<p><strong>Part 2:</strong> If we let \(x=\cos(20^\circ)\), we find that:</p>
+$$4x^3-3x-\frac{1}{2}=0$$
+<p>Show that the above polynomial has exactly one positive root.</p>
+
+<p>Obviously, \(\cos(20^\circ)\) is positive, so the positive root of the above polynomial must be \(\cos(20^\circ)\). Thus, to find \(\cos(20^\circ)\), we just need to solve this cubic equation.</p>
+<hr/>
+
+<p><strong>Part 3:</strong> This cubic can be solved using the "Vieta transformation." First, let \(z\) be such that:</p>
+$$x=z+\frac{1}{4z}$$
+<p>Next, substitute that into the cubic so that the new equation is in terms of \(z\) instead of \(x\):</p>
+$$4\left(z+\frac{1}{4z}\right)^3-3\left(z+\frac{1}{4z}\right)-\frac{1}{2}=0$$
+<p>Manipulate this equation to show that:</p>
+$$64z^6-8z^3+1=0$$
+<hr/>
+
+<p><strong>Part 4:</strong> Use the quadratic formula to find that:</p>
+$$z^3=\frac{1\pm\sqrt{-3}}{16}$$
+<hr/>
+
+<p><strong>Part 5:</strong> Now, let's take a step back for a moment. Consider the following equation:</p>
+$$z^3=a^3$$
+<p>Then, show that this equation has three solutions:</p>
+$$z=a\text{ or }z=a\left(\frac{-1+\sqrt{-3}}{2}\right)\text{ or }z=a\left(\frac{-1-\sqrt{-3}}{2}\right)$$
+<p>HINT: Use the identity \(z^3-a^3=(z-a)(z^2+az+a^2)\). Then, use the quadratic formula to find the roots of the quadratic factor.</p>
+<hr/>
+
+<p><strong>Part 6:</strong> Note that:</p>
+$$\frac{1\pm\sqrt{-3}}{16}=\left(\frac{1}{2}\sqrt[3]{\frac{1\pm\sqrt{-3}}{2}}\right)^3$$
+<p>Then, apply Part 5 to the equation from Part 4 to show that:</p>
+$$z=\frac{1}{2}\sqrt[3]{\frac{1\pm\sqrt{-3}}{2}}\text{ or }z=\frac{1}{2}\left(\frac{-1+\sqrt{-3}}{2}\right)\sqrt[3]{\frac{1\pm\sqrt{-3}}{2}}\text{ or }z=\frac{1}{2}\left(\frac{-1-\sqrt{-3}}{2}\right)\sqrt[3]{\frac{1\pm\sqrt{-3}}{2}}$$
+<p>Notice how, because of the \(\pm\), we actually end up with six solutions for \(z\). This makes sense because, in Part 3, we had a sixth-degree polynomial for \(z\).</p>
+<hr/>
+
+<p><strong>Part 7:</strong> In Part 3, we said that:</p>
+$$x=z+\frac{1}{4z}$$
+<p>Using your calculator, plug in the six solutions for \(z\) into this equation in order to get solutions for \(x\). Some of the values of \(z\) will give the same answer for \(x\), so in the end, you should only have three distinct solutions for \(x\). Again, this makes sense because, in Part 2, we had a third-degree polynomial for \(x\).</p>
+
+<p>As we said before, \(\cos(20^\circ)\) is whatever the positive solution for \(x\) is. Therefore, to find the exact value of \(\cos(20^\circ)\), find a solution for \(z\) that gives a positive value for \(x\) and then plug that solution into \(x=z+\frac{1}{4z}\) by hand. Again, your answer does not need to be simplified.</p>
+<hr/>
+
+<p>However, if you do try to simplify your answer, you will realize that you won't be able to get rid of the \(\sqrt{-3}\). This is somewhat bizarre, because although \(\cos(20^\circ)\) is a real number, it can not be expressed in an exact form unless you use complex numbers like \(\sqrt{-3}\). This underscores one reason why complex numbers are important: Sometimes, you need complex numbers in order to find the real solutions to cubic or higher-order polynomials.</p>
 {% endblock %}
 
 {% block scripts %}

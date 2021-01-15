@@ -33,6 +33,7 @@ urlpatterns = [
     
     path("maze-game", views.maze_game, name="maze_game"),
     path("Games/First-Game", redirect_to("main:maze_game")),
+    path("Projects/First-Game", redirect_to("main:maze_game")),
     
     # For testing 500 errors
     path("error", lambda _: undefined_func()),

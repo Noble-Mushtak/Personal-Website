@@ -173,6 +173,9 @@ def post_chat(request):
             ChatModel.objects.create(
                 name=name, text=text, time=timezone.now(), slug=slug
             )
+            
+            # Log that new chat comment was posted
+            print(f"New chat comment posted at { slug }")
             # 204 indicates success
             # text/plain stops HTML minifier from taking effect
             return HttpResponse(

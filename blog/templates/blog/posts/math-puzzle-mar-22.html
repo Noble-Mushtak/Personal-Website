@@ -2,7 +2,44 @@
 {% load static %}
 
 {% block content %}
-<p>The following was a puzzle presented to Marshwood GT students on March 22, 2019. Have fun doing math!</p><p>Multiplying complex numbers can be somewhat difficult because it requires us to use FOIL whenever we multiply two numbers. For example:</p>$$(a+bi)(c+di)=a(c+di)+bi(c+di)=ac+adi+bci-bd=(ac-bd)+(ad+bc)i$$<p>How can we use polar coordinates to make this multiplication easier?</p><p><strong>Part 0</strong>: First, we need to figure out how to transform complex numbers to polar coordinates. Let's take the complex number \(3+4i\). On the complex plane, this number represents the point \((3, 4)\). Convert this point to polar coordinates. (You can use your calculator.)</p><p>Then, for practice, do the same process to convert \(5+12i\), \(7-9i\), and \(2+3i\) to a point in polar coordinates.</p><p><strong>Part 1</strong>: Now, let's try to convert polar coordinates back into a complex number. Here's a picture of a polar coordinate point on the complex plane:</p><div class="center"><img src="{% static "blog/img/math-puzzle-mar-22-fig1.png" %}" alt="Picture of polar coordinate on complex plane"/></div><p>Find a formula for the complex number in terms of \(r\) and \(\theta\) by calculating the real and imaginary parts of the complex number using trigonometry. Then, convert the polar coordinates you found in Part 0 back to complex numbers. You should get the same complex numbers you started with.</p><p><strong>Part 2</strong>: Now, multiply \(3+4i\) and \(5+12i\) and convert the product to polar coordinates. Repeat this process for \(7-9i\) and \(2+3i\). Do you see any pattern or relationship between the polar coordinates of the products and the polar coordinates of the multiplicands?</p><p><strong>Part 3</strong>: Now, in order to prove the relationship you found in Part 2, let's consider the general case: Let's say that there are two complex numbers with polar coordinates \((r_1, \theta_1)\) and \((r_2, \theta_2)\). First, convert these coordinates into complex numbers using the formula found in Part 1. Then, take the product of the two complex numbers and simplify your answer using trig identities. Finally, convert the product back into polar coordinates like you did in Part 0.</p><details><summary>Click here to check your answer to Part 3.<span class="space-filler"></span></summary>The polar coordinates of the product should be \((r_1r_2, \theta_1+\theta_2)\). If this wasn't the answer you got, then look back over your work and make sure you applied the trig identities correctly.</details><br/><p><strong>Part 4</strong>: Knowing how to use polar coordinates to multiply complex numbers can be a really powerful tool for solving certain equations. For example, take the following equation:</p>$$x^3=i$$<p>To solve this equation, you have to know the "cube root" of \(i\), which is probably something most people don't know off the top of their heads! However, we can use polar coordinates to solve this equation instead: First, show that \(i\) has polar coordinates of \((1, \frac{\pi}{2})\). Then, let's say \(x\) has polar coordinates of \((r, \theta)\). Use the relationship between multiplication and polar coordinates to show that this means \(x^3\) has polar coordinates of \((r^3, 3\theta)\).</p><p>Then, solve the equation in terms of polar coordinates:</p>$$(r^3, 3\theta)=\left(1, \frac{\pi}{2}\right)$$<p>Notice that there are multiple solutions to \(\theta\) because angles can differ by \(2\pi\). This means that \(3\theta\) could be \(\frac{\pi}{2}\), \(\frac{5\pi}{2}\), \(\frac{9\pi}{2}\), etc. Find all possible solutions \((r, \theta)\) to this equation.</p><p>Once you solve the equation in terms of polar coordinates, convert the polar coordinates back into complex numbers using the formula found in Part 1 to find the solutions for \(x\).</p>
+<p>The following was a puzzle presented to Marshwood GT students on March 22, 2019. Have fun doing math!</p>
+
+<p>Multiplying complex numbers can be somewhat difficult because it requires us to use FOIL whenever we multiply two numbers. For example:</p>
+$$(a+bi)(c+di)=a(c+di)+bi(c+di)=ac+adi+bci-bd=(ac-bd)+(ad+bc)i$$
+
+<p>How can we use polar coordinates to make this multiplication easier?</p>
+
+<p><strong>Part 0</strong>: First, we need to figure out how to transform complex numbers to polar coordinates. Let's take the complex number \(3+4i\). On the complex plane, this number represents the point \((3, 4)\). Convert this point to polar coordinates. (You can use your calculator.)</p>
+
+<p>Then, for practice, do the same process to convert \(5+12i\), \(7-9i\), and \(2+3i\) to a point in polar coordinates.</p>
+
+<p><strong>Part 1</strong>: Now, let's try to convert polar coordinates back into a complex number. Here's a picture of a polar coordinate point on the complex plane:</p>
+
+<div class="center">
+  <img src="{% static "blog/img/math-puzzle-mar-22-fig1.png" %}" alt="Picture of polar coordinate on complex plane"/>
+</div>
+
+<p>Find a formula for the complex number in terms of \(r\) and \(\theta\) by calculating the real and imaginary parts of the complex number using trigonometry. Then, convert the polar coordinates you found in Part 0 back to complex numbers. You should get the same complex numbers you started with.</p>
+
+<p><strong>Part 2</strong>: Now, multiply \(3+4i\) and \(5+12i\) and convert the product to polar coordinates. Repeat this process for \(7-9i\) and \(2+3i\). Do you see any pattern or relationship between the polar coordinates of the products and the polar coordinates of the multiplicands?</p>
+
+<p><strong>Part 3</strong>: Now, in order to prove the relationship you found in Part 2, let's consider the general case: Let's say that there are two complex numbers with polar coordinates \((r_1, \theta_1)\) and \((r_2, \theta_2)\). First, convert these coordinates into complex numbers using the formula found in Part 1. Then, take the product of the two complex numbers and simplify your answer using trig identities. Finally, convert the product back into polar coordinates like you did in Part 0.</p>
+
+<details>
+<summary>Click here to check your answer to Part 3.<span class="space-filler"></span></summary>
+The polar coordinates of the product should be \((r_1r_2, \theta_1+\theta_2)\). If this wasn't the answer you got, then look back over your work and make sure you applied the trig identities correctly.
+</details>
+<br/>
+
+<p><strong>Part 4</strong>: Knowing how to use polar coordinates to multiply complex numbers can be a really powerful tool for solving certain equations. For example, take the following equation:</p>
+$$x^3=i$$
+<p>To solve this equation, you have to know the "cube root" of \(i\), which is probably something most people don't know off the top of their heads! However, we can use polar coordinates to solve this equation instead: First, show that \(i\) has polar coordinates of \((1, \frac{\pi}{2})\). Then, let's say \(x\) has polar coordinates of \((r, \theta)\). Use the relationship between multiplication and polar coordinates to show that this means \(x^3\) has polar coordinates of \((r^3, 3\theta)\).</p>
+
+<p>Then, solve the equation in terms of polar coordinates:</p>
+$$(r^3, 3\theta)=\left(1, \frac{\pi}{2}\right)$$
+<p>Notice that there are multiple solutions to \(\theta\) because angles can differ by \(2\pi\). This means that \(3\theta\) could be \(\frac{\pi}{2}\), \(\frac{5\pi}{2}\), \(\frac{9\pi}{2}\), etc. Find all possible solutions \((r, \theta)\) to this equation.</p>
+
+<p>Once you solve the equation in terms of polar coordinates, convert the polar coordinates back into complex numbers using the formula found in Part 1 to find the solutions for \(x\).</p>
 {% endblock %}
 
 {% block scripts %}

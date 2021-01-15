@@ -2,7 +2,134 @@
 {% load static %}
 
 {% block content %}
-<p>The following was a puzzle presented to Marshwood GT students on January 18, 2019. Have fun doing math!</p><p>In pre-calc, you learn how to derive the formula for the distance between a point and a line using some geometry and a bunch of algebra. Here, we are going to derive the formula in an alternative manner using vectors. This proof has less algebra, but is much more conceptual, so many of the parts ask you to “explain” why a certain statement is true. Here, you don’t necessarily have to write down your answer, but really convince yourself that the statement makes sense intuitively. This will help build your mathematical intuition and give you a deeper understanding of the proof.</p><p>Also, remember that \(2\mathbf{\hat i}+3\mathbf{\hat j}\) represents a vector with x-component of \(2\) and y-component of \(3\).</p><hr/><p><strong>Part 1:</strong> First, set up the problem with a drawing: Draw a line and label the equation as \(Ax+By=C\). Then, draw a point not on that line and label it as \((x_0, y_0)\). Next, draw a line perpendicular to \(Ax+By=C\) through \((x_0, y_0)\). This second line intersects the first line at a point: Label that intersection as \((x_1, y_1)\). Finally, choose some other point on the line \(Ax+By=C\) and label that as \((x_2, y_2)\).</p><details><summary>Click here to show/hide a drawing of Part 1.<span class="space-filler"></span></summary><img alt="Picture of two perpendicular lines and three points" src="{% static "blog/img/math-puzzle-jan-18-fig1.png" %}"/></details><hr/><p><strong>Part 2:</strong> The purpose of this puzzle is to find the distance between the fixed point \((x_0, y_0)\) and the line \(Ax+By=C\). The distance between a fixed point and a line is defined as the shortest distance between that point and any point on the line. Using this definition, explain why the distance from \((x_0,y_0)\) to \(Ax+By=C\) equals the distance between \((x_0,y_0)\) and \((x_1,y_1)\).</p><p>HINT: In our drawing, \((x_2,y_2)\) represents “any point on the line.” Therefore, to show that the distance from \((x_0,y_0)\) to \((x_1,y_1)\) is the shortest distance from \((x_0,y_0)\) to any point on the line, simply explain why that distance is less or equal to the distance from \((x_0,y_0)\) to \((x_2,y_2)\).</p><details><summary>Click here to show/hide an explanation of Part 2.<span class="space-filler"></span></summary>Here, we have drawn a right triangle, where the side between \((x_0, y_0)\) and \((x_1, y_1)\) is a leg and the side between \((x_0, y_0)\) and \((x_2, y_2)\) is a hypotenuse. Therefore, since a right triangle's leg can never be longer than its hypotenuse, the distance between \((x_0, y_0)\) and \((x_1, y_1)\) is less than or equal to the distance from \((x_0,y_0)\) to \((x_2,y_2)\).<img alt="Picture of two perpendicular lines and a right triangle between three points" src="{% static "blog/img/math-puzzle-jan-18-fig2.png" %}"/></details><br/><p>Note that Part 2 means we are ultimately solving for the distance between \((x_0, y_0)\) and \((x_1, y_1)\), or:</p>$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}$$<hr/><p><strong>Part 3:</strong> Now, we need to define "parallel" and "perpendicular" in terms of vectors. Let's say we have two vectors \(a\mathbf{\hat i}+b\mathbf{\hat j}\) and \(c\mathbf{\hat i}+d\mathbf{\hat j}\). These two vectors are "parallel" if and only if \(c\mathbf{\hat i}+d\mathbf{\hat j}\) can be multiplied by some number \(k\) to get \(a\mathbf{\hat i}+b\mathbf{\hat j}\).</p><p>For example, \(1\mathbf{\hat i}+2\mathbf{\hat j}\) is parallel to \(2\mathbf{\hat i}+4\mathbf{\hat j}\) because \((2\mathbf{\hat i}+4\mathbf{\hat j})\cdot\frac{1}{2}=1\mathbf{\hat i}+2\mathbf{\hat j}\). However, \(1\mathbf{\hat i}+2\mathbf{\hat j}\) is not parallel to \(1\mathbf{\hat i}+3\mathbf{\hat j}\) because \(1\mathbf{\hat i}+3\mathbf{\hat j}\) is not any multiple of \(1\mathbf{\hat i}+2\mathbf{\hat j}\)</p><p>Explain why this definition of parallel makes sense in terms of slope.</p><details><summary>Click here for an explanation of Part 3.<span class="space-filler"></span></summary>From coordinate geometry, we know that two vectors are parallel if they have the same slope. Now, if we multiply \(a\mathbf{\hat i}+b\mathbf{\hat j}\) by some number \(k\), the slope, which is the ratio from y-component to x-component, stays the same because the \(k\) cancels out between the numerator and denominator. Therefore, \(a\mathbf{\hat i}+b\mathbf{\hat j}\) is parallel to \(ka\mathbf{\hat i}+kb\mathbf{\hat j}\) because these two vectors have the same slope.</details><hr/><p><strong>Part 4:</strong> We can define "perpendicular" in terms of parallel vectors: \(a\mathbf{\hat i}+b\mathbf{\hat j}\) is "perpendicular" to \(c\mathbf{\hat i}+d\mathbf{\hat j}\) if and only if \(c\mathbf{\hat i}+d\mathbf{\hat j}\) is parallel to \(-b\mathbf{\hat i}+a\mathbf{\hat j}\).</p><p>Explain why this definition of perpendicular makes sense. HINT: What happens to the vector \(a\mathbf{\hat i}+b\mathbf{\hat j}\) when you rotate it counterclockwise by \(90^\circ\)?</p><details><summary>Click here for an explanation of Part 4.<span class="space-filler"></span></summary>As shown by <a href="https://www.youtube.com/watch?v=_3nESF2rMgk&vl=en">this demonstration</a>, when we rotate \(a\mathbf{\hat i}+b\mathbf{\hat j}\) by \(90^\circ\), we get the vector \(-b\mathbf{\hat i}+a\mathbf{\hat j}\). Thus, \(-b\mathbf{\hat i}+a\mathbf{\hat j}\) is perpendicular to \(a\mathbf{\hat i}+b\mathbf{\hat j}\). Now, let's say we have another vector \(c\mathbf{\hat i}+d\mathbf{\hat j}\) which is also perpendicular to \(a\mathbf{\hat i}+b\mathbf{\hat j}\). This means that both \(-b\mathbf{\hat i}+a\mathbf{\hat j}\) and \(c\mathbf{\hat i}+d\mathbf{\hat j}\) are perpendicular to the same vector, so \(c\mathbf{\hat i}+d\mathbf{\hat j}\) is parallel to \(-b\mathbf{\hat i}+a\mathbf{\hat j}\).</details><hr/><p><strong>Part 5:</strong> The vector from \((x_1, y_1)\) to \((x_2, y_2)\) is defined as:</p>$$(x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}$$<p>Furthermore, in our drawing, both \((x_1, y_1)\) and \((x_2, y_2)\) are on the line \(Ax+By=C\). Therefore, we have:$$Ax_1+By_1=C\ \ \ \ \text{(1)}$$ $$Ax_2+By_2=C\ \ \ \ \text{(2)}$$<p>Subtract equation (2) by equation (1):$$A(x_2-x_1)+B(y_2-y_1)=0\ \ \ \ \text{(3)}$$<p>Now, prove that \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\) is parallel to \(-B\mathbf{\hat i}+A\mathbf{\hat j}\).</p><p>HINT: Use equation (3) to show that the ratio \(\frac{x_2-x_1}{-B}\) equals \(\frac{y_2-y_1}{A}\). Then, show that the vector \(-B\mathbf{\hat i}+A\mathbf{\hat j}\) times that ratio equals \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\).</p><details><summary>Click here for a solution to Part 5.<span class="space-filler"></span></summary>If we rearrange equation (3), we find that:$$A(x_2-x_1)=-B(y_2-y_1)$$Divide both sides by \(-BA\):$$\frac{x_2-x_1}{-B}=\frac{y_2-y_1}{A}$$Now, if we let \(m=\frac{x_2-x_1}{-B}=\frac{y_2-y_1}{A}\), then we can solve for the components of \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\) in terms of \(m\): \(x_2-x_1=-mB\) and \(y_2-y_1=mA\). Therefore, we get that:$$(x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}=-mB\mathbf{\hat i}+mA\mathbf{\hat j}=m(-B\mathbf{\hat i}+A\mathbf{\hat j})$$This equation implies that \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\) is parallel to \(-B\mathbf{\hat i}+A\mathbf{\hat j}\).</details><hr/><p><strong>Part 6:</strong> Now, when we made our drawing in Part 1, we made the line through \((x_0, y_0)\) and \((x_1, y_1)\) perpendicular to the line \(Ax+By=C\). Therefore, the vector from \((x_1, y_1)\) to \((x_2, y_2)\) is perpendicular to the vector from \((x_1, y_1)\) to \((x_0, y_0)\).</p><p>Use this information to prove that \((x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}\) is parallel to \(A\mathbf{\hat i}+B\mathbf{\hat j}\). In particular, prove that there is some real number such that:</p>$$(x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}=k(A\mathbf{\hat i}+B\mathbf{\hat j})\ \text{for some real number}\ k$$<details><summary>Click here for a solution to Part 6.<span class="space-filler"></span></summary>As said earlier, \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\) is perpendicular to \((x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}\). Using the definition of perpendicular, this means that \((x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}\) is parallel to \(-(y_2-y_1)\mathbf{\hat i}+(x_2-x_1)\mathbf{\hat j}\), so, by the definition of parallel, there is some real number \(n\) such that:$$(x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}=n(-(y_2-y_1)\mathbf{\hat i}+(x_2-x_1)\mathbf{\hat j})$$<p>Now, if we let \(m=\frac{y_2-y_1}{A}=\frac{x_2-x_1}{-B}\), we can say \(y_2-y_1=mA\) and \(x_2-x_1=-mB\), so that:</p>$$(x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}=n(-mA\mathbf{\hat i}-mB\mathbf{\hat j})=-nm(A\mathbf{\hat i}+B\mathbf{\hat j})$$<p>This equation shows that \((x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}\) is parallel to \(A\mathbf{\hat i}+B\mathbf{\hat j}\).</details><hr/><p><strong>Part 7:</strong> Remember that, if two vectors are equal, their x-components and y-components are also equal. Therefore, from Part 6:</p>$$x_0-x_1=kA$$ $$y_0-y_1=kB$$<p>Use these equations to show that:</p>$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|k|\sqrt{A^2+B^2}$$<details><summary>Click here for a solution to Part 7.<span class="space-filler"></span></summary>$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=\sqrt{k^2A^2+k^2B^2}=\sqrt{k^2}\cdot\sqrt{A^2+B^2}=|k|\sqrt{A^2+B^2}$$</details><hr/><p><strong>Part 8:</strong> Now, let's go back to equation (1) from Part 5:</p>$$Ax_1+By_1=C$$<p>Substitute \(x_1=x_0-kA\) and \(y_1=y_0-kA\) into the above equation. Then, solve for \(k\).</p><details><summary>Click here for a solution to Part 8.<span class="space-filler"></span></summary>$$A(x_0-kA)+B(y_0-kB)=C$$Distribute the \(A\) and \(B\) and rearange terms:$$Ax_0+By_0-kA^2-kB^2=C$$Move all of the terms with \(k\) to the right and move all of the terms without \(k\) to the left:$$Ax_0+By_0-C=kA^2+kB^2=k(A^2+B^2)$$Divide both sides by \(A^2+B^2\):$$k=\frac{Ax_0+By_0-C}{A^2+B^2}$$</details><hr/><p><strong>Part 9:</strong> Finally, substitute the value of \(k\) into the equation from Part 7 to get:</p>$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|k|\sqrt{A^2+B^2}=\frac{|Ax_0+By_0-C|}{\sqrt{A^2+B^2}}$$<details><summary>Click here for a solution to Part 9.<span class="space-filler"></span></summary>$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|k|\sqrt{A^2+B^2}=\left|\frac{Ax_0+By_0-C}{A^2+B^2}\right|\sqrt{A^2+B^2}$$Now, for real numbers \(A, B\), \(A^2+B^2\) is always non-negative, so we can take that out of the absolute value sign:$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|Ax_0+By_0+C|\frac{\sqrt{A^2+B^2}}{A^2+B^2}$$Since \(A^2+B^2=\left(\sqrt{A^2+B^2}\right)^2\), this simplifies to:$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|Ax_0+By_0+C|\frac{\sqrt{A^2+B^2}}{\left(\sqrt{A^2+B^2}\right)^2}=|Ax_0+By_0+C|\frac{1}{\sqrt{A^2+B^2}}=\frac{|Ax_0+By_0-C|}{\sqrt{A^2+B^2}}$$</details><hr/><p><strong>Part 10:</strong> In your pre-calc textbook, the formula may have a \(+C\) instead of a \(-C\). Explain the difference between your pre-calc textbook formula and the formula above by comparing your textbook’s formula for a line, \(Ax+By+C=0\), and our formula for a line, \(Ax+By=C\).</p>
+<p>The following was a puzzle presented to Marshwood GT students on January 18, 2019. Have fun doing math!</p>
+
+<p>In pre-calc, you learn how to derive the formula for the distance between a point and a line using some geometry and a bunch of algebra. Here, we are going to derive the formula in an alternative manner using vectors. This proof has less algebra, but is much more conceptual, so many of the parts ask you to “explain” why a certain statement is true. Here, you don’t necessarily have to write down your answer, but really convince yourself that the statement makes sense intuitively. This will help build your mathematical intuition and give you a deeper understanding of the proof.</p>
+
+<p>Also, remember that \(2\mathbf{\hat i}+3\mathbf{\hat j}\) represents a vector with x-component of \(2\) and y-component of \(3\).</p>
+<hr/>
+
+<p><strong>Part 1:</strong> First, set up the problem with a drawing: Draw a line and label the equation as \(Ax+By=C\). Then, draw a point not on that line and label it as \((x_0, y_0)\). Next, draw a line perpendicular to \(Ax+By=C\) through \((x_0, y_0)\). This second line intersects the first line at a point: Label that intersection as \((x_1, y_1)\). Finally, choose some other point on the line \(Ax+By=C\) and label that as \((x_2, y_2)\).</p>
+
+<details>
+<summary>Click here to show/hide a drawing of Part 1.<span class="space-filler"></span></summary>
+<img alt="Picture of two perpendicular lines and three points" src="{% static "blog/img/math-puzzle-jan-18-fig1.png" %}"/>
+</details>
+<hr/>
+
+<p><strong>Part 2:</strong> The purpose of this puzzle is to find the distance between the fixed point \((x_0, y_0)\) and the line \(Ax+By=C\). The distance between a fixed point and a line is defined as the shortest distance between that point and any point on the line. Using this definition, explain why the distance from \((x_0,y_0)\) to \(Ax+By=C\) equals the distance between \((x_0,y_0)\) and \((x_1,y_1)\).</p>
+
+<p>HINT: In our drawing, \((x_2,y_2)\) represents “any point on the line.” Therefore, to show that the distance from \((x_0,y_0)\) to \((x_1,y_1)\) is the shortest distance from \((x_0,y_0)\) to any point on the line, simply explain why that distance is less or equal to the distance from \((x_0,y_0)\) to \((x_2,y_2)\).</p>
+
+<details>
+<summary>Click here to show/hide an explanation of Part 2.<span class="space-filler"></span></summary>
+Here, we have drawn a right triangle, where the side between \((x_0, y_0)\) and \((x_1, y_1)\) is a leg and the side between \((x_0, y_0)\) and \((x_2, y_2)\) is a hypotenuse. Therefore, since a right triangle's leg can never be longer than its hypotenuse, the distance between \((x_0, y_0)\) and \((x_1, y_1)\) is less than or equal to the distance from \((x_0,y_0)\) to \((x_2,y_2)\).<img alt="Picture of two perpendicular lines and a right triangle between three points" src="{% static "blog/img/math-puzzle-jan-18-fig2.png" %}"/>
+</details>
+<br/>
+
+<p>Note that Part 2 means we are ultimately solving for the distance between \((x_0, y_0)\) and \((x_1, y_1)\), or:</p>
+$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}$$
+<hr/>
+
+<p><strong>Part 3:</strong> Now, we need to define "parallel" and "perpendicular" in terms of vectors. Let's say we have two vectors \(a\mathbf{\hat i}+b\mathbf{\hat j}\) and \(c\mathbf{\hat i}+d\mathbf{\hat j}\). These two vectors are "parallel" if and only if \(c\mathbf{\hat i}+d\mathbf{\hat j}\) can be multiplied by some number \(k\) to get \(a\mathbf{\hat i}+b\mathbf{\hat j}\).</p>
+
+<p>For example, \(1\mathbf{\hat i}+2\mathbf{\hat j}\) is parallel to \(2\mathbf{\hat i}+4\mathbf{\hat j}\) because \((2\mathbf{\hat i}+4\mathbf{\hat j})\cdot\frac{1}{2}=1\mathbf{\hat i}+2\mathbf{\hat j}\). However, \(1\mathbf{\hat i}+2\mathbf{\hat j}\) is not parallel to \(1\mathbf{\hat i}+3\mathbf{\hat j}\) because \(1\mathbf{\hat i}+3\mathbf{\hat j}\) is not any multiple of \(1\mathbf{\hat i}+2\mathbf{\hat j}\)</p>
+
+<p>Explain why this definition of parallel makes sense in terms of slope.</p>
+
+<details>
+<summary>Click here for an explanation of Part 3.<span class="space-filler"></span></summary>
+From coordinate geometry, we know that two vectors are parallel if they have the same slope. Now, if we multiply \(a\mathbf{\hat i}+b\mathbf{\hat j}\) by some number \(k\), the slope, which is the ratio from y-component to x-component, stays the same because the \(k\) cancels out between the numerator and denominator. Therefore, \(a\mathbf{\hat i}+b\mathbf{\hat j}\) is parallel to \(ka\mathbf{\hat i}+kb\mathbf{\hat j}\) because these two vectors have the same slope.
+</details>
+<hr/>
+
+<p><strong>Part 4:</strong> We can define "perpendicular" in terms of parallel vectors: \(a\mathbf{\hat i}+b\mathbf{\hat j}\) is "perpendicular" to \(c\mathbf{\hat i}+d\mathbf{\hat j}\) if and only if \(c\mathbf{\hat i}+d\mathbf{\hat j}\) is parallel to \(-b\mathbf{\hat i}+a\mathbf{\hat j}\).</p>
+
+<p>Explain why this definition of perpendicular makes sense. HINT: What happens to the vector \(a\mathbf{\hat i}+b\mathbf{\hat j}\) when you rotate it counterclockwise by \(90^\circ\)?</p>
+
+<details>
+<summary>Click here for an explanation of Part 4.<span class="space-filler"></span></summary>
+As shown by <a href="https://www.youtube.com/watch?v=_3nESF2rMgk&vl=en">this demonstration</a>, when we rotate \(a\mathbf{\hat i}+b\mathbf{\hat j}\) by \(90^\circ\), we get the vector \(-b\mathbf{\hat i}+a\mathbf{\hat j}\). Thus, \(-b\mathbf{\hat i}+a\mathbf{\hat j}\) is perpendicular to \(a\mathbf{\hat i}+b\mathbf{\hat j}\). Now, let's say we have another vector \(c\mathbf{\hat i}+d\mathbf{\hat j}\) which is also perpendicular to \(a\mathbf{\hat i}+b\mathbf{\hat j}\). This means that both \(-b\mathbf{\hat i}+a\mathbf{\hat j}\) and \(c\mathbf{\hat i}+d\mathbf{\hat j}\) are perpendicular to the same vector, so \(c\mathbf{\hat i}+d\mathbf{\hat j}\) is parallel to \(-b\mathbf{\hat i}+a\mathbf{\hat j}\).
+</details>
+<hr/>
+
+<p><strong>Part 5:</strong> The vector from \((x_1, y_1)\) to \((x_2, y_2)\) is defined as:</p>
+$$(x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}$$
+<p>Furthermore, in our drawing, both \((x_1, y_1)\) and \((x_2, y_2)\) are on the line \(Ax+By=C\). Therefore, we have:</p>
+$$Ax_1+By_1=C\ \ \ \ \text{(1)}$$
+$$Ax_2+By_2=C\ \ \ \ \text{(2)}$$
+
+<p>Subtract equation (2) by equation (1):</p>
+$$A(x_2-x_1)+B(y_2-y_1)=0\ \ \ \ \text{(3)}$$
+
+<p>Now, prove that \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\) is parallel to \(-B\mathbf{\hat i}+A\mathbf{\hat j}\).</p>
+
+<p>HINT: Use equation (3) to show that the ratio \(\frac{x_2-x_1}{-B}\) equals \(\frac{y_2-y_1}{A}\). Then, show that the vector \(-B\mathbf{\hat i}+A\mathbf{\hat j}\) times that ratio equals \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\).</p>
+
+<details>
+<summary>Click here for a solution to Part 5.<span class="space-filler"></span></summary>
+If we rearrange equation (3), we find that:$$A(x_2-x_1)=-B(y_2-y_1)$$Divide both sides by \(-BA\):$$\frac{x_2-x_1}{-B}=\frac{y_2-y_1}{A}$$Now, if we let \(m=\frac{x_2-x_1}{-B}=\frac{y_2-y_1}{A}\), then we can solve for the components of \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\) in terms of \(m\): \(x_2-x_1=-mB\) and \(y_2-y_1=mA\). Therefore, we get that:$$(x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}=-mB\mathbf{\hat i}+mA\mathbf{\hat j}=m(-B\mathbf{\hat i}+A\mathbf{\hat j})$$This equation implies that \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\) is parallel to \(-B\mathbf{\hat i}+A\mathbf{\hat j}\).
+</details>
+<hr/>
+
+<p><strong>Part 6:</strong> Now, when we made our drawing in Part 1, we made the line through \((x_0, y_0)\) and \((x_1, y_1)\) perpendicular to the line \(Ax+By=C\). Therefore, the vector from \((x_1, y_1)\) to \((x_2, y_2)\) is perpendicular to the vector from \((x_1, y_1)\) to \((x_0, y_0)\).</p>
+
+<p>Use this information to prove that \((x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}\) is parallel to \(A\mathbf{\hat i}+B\mathbf{\hat j}\). In particular, prove that there is some real number such that:</p>
+$$(x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}=k(A\mathbf{\hat i}+B\mathbf{\hat j})\ \text{for some real number}\ k$$
+
+<details>
+<summary>Click here for a solution to Part 6.<span class="space-filler"></span></summary>
+As said earlier, \((x_2-x_1)\mathbf{\hat i}+(y_2-y_1)\mathbf{\hat j}\) is perpendicular to \((x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}\). Using the definition of perpendicular, this means that \((x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}\) is parallel to \(-(y_2-y_1)\mathbf{\hat i}+(x_2-x_1)\mathbf{\hat j}\), so, by the definition of parallel, there is some real number \(n\) such that:
+$$(x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}=n(-(y_2-y_1)\mathbf{\hat i}+(x_2-x_1)\mathbf{\hat j})$$
+
+<p>Now, if we let \(m=\frac{y_2-y_1}{A}=\frac{x_2-x_1}{-B}\), we can say \(y_2-y_1=mA\) and \(x_2-x_1=-mB\), so that:</p>
+$$(x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}=n(-mA\mathbf{\hat i}-mB\mathbf{\hat j})=-nm(A\mathbf{\hat i}+B\mathbf{\hat j})$$
+
+<p>This equation shows that \((x_0-x_1)\mathbf{\hat i}+(y_0-y_1)\mathbf{\hat j}\) is parallel to \(A\mathbf{\hat i}+B\mathbf{\hat j}\).
+</details>
+<hr/>
+
+<p><strong>Part 7:</strong> Remember that, if two vectors are equal, their x-components and y-components are also equal. Therefore, from Part 6:</p>
+$$x_0-x_1=kA$$
+$$y_0-y_1=kB$$
+<p>Use these equations to show that:</p>
+$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|k|\sqrt{A^2+B^2}$$
+
+<details>
+<summary>Click here for a solution to Part 7.<span class="space-filler"></span></summary>
+$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=\sqrt{k^2A^2+k^2B^2}=\sqrt{k^2}\cdot\sqrt{A^2+B^2}=|k|\sqrt{A^2+B^2}$$
+</details>
+<hr/>
+
+<p><strong>Part 8:</strong> Now, let's go back to equation (1) from Part 5:</p>
+$$Ax_1+By_1=C$$
+<p>Substitute \(x_1=x_0-kA\) and \(y_1=y_0-kA\) into the above equation. Then, solve for \(k\).</p>
+
+<details>
+<summary>Click here for a solution to Part 8.<span class="space-filler"></span></summary>
+$$A(x_0-kA)+B(y_0-kB)=C$$
+Distribute the \(A\) and \(B\) and rearange terms:
+$$Ax_0+By_0-kA^2-kB^2=C$$
+Move all of the terms with \(k\) to the right and move all of the terms without \(k\) to the left:
+$$Ax_0+By_0-C=kA^2+kB^2=k(A^2+B^2)$$
+Divide both sides by \(A^2+B^2\):$$k=\frac{Ax_0+By_0-C}{A^2+B^2}$$
+</details>
+<hr/>
+
+<p><strong>Part 9:</strong> Finally, substitute the value of \(k\) into the equation from Part 7 to get:</p>
+$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|k|\sqrt{A^2+B^2}=\frac{|Ax_0+By_0-C|}{\sqrt{A^2+B^2}}$$
+
+<details>
+<summary>Click here for a solution to Part 9.<span class="space-filler"></span></summary>
+$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|k|\sqrt{A^2+B^2}=\left|\frac{Ax_0+By_0-C}{A^2+B^2}\right|\sqrt{A^2+B^2}$$
+Now, for real numbers \(A, B\), \(A^2+B^2\) is always non-negative, so we can take that out of the absolute value sign:
+$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|Ax_0+By_0+C|\frac{\sqrt{A^2+B^2}}{A^2+B^2}$$
+Since \(A^2+B^2=\left(\sqrt{A^2+B^2}\right)^2\), this simplifies to:
+$$\sqrt{(x_0-x_1)^2+(y_0-y_1)^2}=|Ax_0+By_0+C|\cdot \frac{\sqrt{A^2+B^2}}{\left(\sqrt{A^2+B^2}\right)^2}=|Ax_0+By_0+C|\frac{1}{\sqrt{A^2+B^2}}=\frac{|Ax_0+By_0-C|}{\sqrt{A^2+B^2}}$$
+</details>
+<hr/>
+
+<p><strong>Part 10:</strong> In your pre-calc textbook, the formula may have a \(+C\) instead of a \(-C\). Explain the difference between your pre-calc textbook formula and the formula above by comparing your textbook’s formula for a line, \(Ax+By+C=0\), and our formula for a line, \(Ax+By=C\).</p>
 {% endblock %}
 
 {% block scripts %}
