@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head prefix="{% block head_prefix %}og: http://ogp.me/ns#{% endblock %}">
-<title>{% block title1 %}{% endblock %}{% block title_suffix %} | Noble Mushtak{% endblock %}</title>
+<title>{% block title1 %}{% endblock %}{% block title_suffix1 %} | Noble Mushtak{% endblock %}</title>
 {% include "main/head.html" %}
 {% block seo_head %}
 <meta name="description" content="{% block description1 %}{% endblock %}"/>
-<meta property="og:title" content="{% block title2 %}{% endblock %}"/>
+<meta property="og:title" content="{% block title2 %}{% endblock %}{% block title_suffix2 %} | Noble Mushtak{% endblock %}"/>
 <meta property="og:site_name" content="Noble Mushtak"/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="{{ site_domain }}{{ request.path }}"/>
@@ -20,7 +20,7 @@
 {% block pre_main %}{% endblock %}
 <main {% block main_attrs %}itemscope itemtype="http://schema.org/WebPage"{% endblock %}>
 {% block itemprops %}
-<meta itemprop="name" content="{% block title3 %}{% endblock %}"/>
+<meta itemprop="name" content="{% block title3 %}{% endblock %}{% block title_suffix3 %} | Noble Mushtak{% endblock %}"/>
 <meta itemprop="description" content="{% block description3 %}{% endblock %}"/>
 {% endblock %}
 
