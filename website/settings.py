@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
+from django.urls import get_resolver
+
 # Use mock_secrets when running this code locally
 if os.environ.get('DJANGO_LOCAL', '') == "True":
     from . import mock_secrets as secrets
@@ -138,3 +140,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Webmaster Verification
 # https://pypi.org/project/django-webmaster-verification/
 WEBMASTER_VERIFICATION = secrets.WEBMASTER_VERIFICATION
+
+# Exclude Webmaster verifications from minification
+# https://pypi.org/project/django-htmlmin/
+EXCLUDE_FROM_MINIFYING = [str(url_pattern.pattern) for url_pattern in get_resolver("webmaster_verification.urls").url_patterns]
