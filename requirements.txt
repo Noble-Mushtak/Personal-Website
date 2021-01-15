@@ -2,6 +2,7 @@ asgiref==3.3.1
 beautifulsoup4==4.9.3
 Django==3.1.5
 django-htmlmin==0.11.0
+django-webmaster-verification==0.4.2
 html5lib==1.1
 mysqlclient==2.0.3
 pytz==2020.5
