@@ -16,11 +16,10 @@ from pathlib import Path
 if os.environ.get('DJANGO_LOCAL', '') == "True":
     from . import mock_secrets as secrets
 else:
-    from . import secrets as secrets
+    from . import secrets
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
@@ -47,6 +46,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'webmaster_verification',
     'main.apps.MainConfig',
     'blog.apps.BlogConfig',
 ]
@@ -126,7 +126,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
@@ -135,3 +134,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = []
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+# Webmaster Verification
+# https://pypi.org/project/django-webmaster-verification/
+WEBMASTER_VERIFICATION = secrets.WEBMASTER_VERIFICATION

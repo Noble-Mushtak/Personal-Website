@@ -12,3 +12,7 @@ DATABASE = {
     'PASSWORD': '',
     'HOST': ''
 }
+
+WEBMASTER_VERIFICATION = {
+    'google': '53553551efcc348a',
+}

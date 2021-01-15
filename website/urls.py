@@ -35,6 +35,7 @@ def handler500(request):
 
 urlpatterns = [
     path("", include("main.urls")),
+    path("", include("webmaster_verification.urls")),
     path("blog/", include("blog.urls")),
     # Redirect Blog/ to blog/
     path(
