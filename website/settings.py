@@ -34,8 +34,8 @@ SECRET_KEY = secrets.SECRET_KEY
 DEBUG = os.environ.get("DJANGO_DEBUG", "") == "True"
 
 # Domain name
-SITE_HOST = "noblemushtak.pythonanywhere.com"
-SITE_DOMAIN = f"https://{ SITE_HOST }"
+SITE_HOST = "www.noblemushtak.com"
+SITE_DOMAIN = f"http://{ SITE_HOST }"
 
 ALLOWED_HOSTS = ["localhost", "127.0.0.1", "192.168.0.86", SITE_HOST]
 
