@@ -12,6 +12,7 @@ First, make sure you have [Python 3](https://www.python.org/downloads/) and [pip
 
     sudo apt-get install mysql-server
     sudo apt-get install mysql-client
+    sudo apt-get install libmysqlclient-dev
     pip install -r requirements.txt
 
 Next, you will need to set up a MySQL user and database. The `website/mock_secrets.py` is set up to use MySQL with the user `noble` and a database named `website` with an empty password, so modify that file if you would like to use a different username or database name.
