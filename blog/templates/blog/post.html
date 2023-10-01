@@ -25,10 +25,13 @@
 {% block body %}
 <div id="date" itemprop="author creator" itemscope itemtype="http://schema.org/Person">Written on <time datetime="{{ pubtime }}">{{ pubtime_obj|date:"F  j, Y" }}</time> by <span itemprop="name">Noble Mushtak</span></div><br/>
 <div id="blog" itemprop="articleBody">{% block content %}{% endblock %}</div><br/>
+{% comment %}
+<!-- Chats are disabled for now, no time to moderate the chat -->
 <button class="btn btn-success" id="hider">Click here to show the Chat Center.</button>
 <div id="chat-center">
 {% include "main/chats.html" %}
 </div>
+{% endcomment %}
 {% endblock %}
 
 {% block scripts %}

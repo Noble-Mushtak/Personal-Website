@@ -24,12 +24,15 @@ urlpatterns = [
     
     path("privacy-policy", views.privacy_policy, name="privacy_policy"),
     path("Privacy-Policy", redirect_to("main:privacy_policy")),
-    
-    path("chat-center", views.chat_center, name="chat_center"),
-    path("Chat-Center", redirect_to("main:chat_center")),
-    path("get-chats", views.get_chats, name="get_chats"),
-    path("post-chat", views.post_chat, name="post_chat"),
-    path("get-new-chats", views.get_new_chats, name="get_new_chats"),
+
+    # Getting and posting chats are disabled
+    # because I don't have time to moderate the chat anymore,
+    # but I left the code in in case I want to enable it again later
+    # path("chat-center", views.chat_center, name="chat_center"),
+    # path("Chat-Center", redirect_to("main:chat_center")),
+    # path("get-chats", views.get_chats, name="get_chats"),
+    # path("post-chat", views.post_chat, name="post_chat"),
+    # path("get-new-chats", views.get_new_chats, name="get_new_chats"),
     
     path("maze-game", views.maze_game, name="maze_game"),
     path("Games/First-Game", redirect_to("main:maze_game")),

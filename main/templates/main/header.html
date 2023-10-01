@@ -18,7 +18,10 @@
   <li class="col-md-5 col-xs-5 dropdown">
     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Random</a>
     <ul class="dropdown-menu col-md-10 col-xs-10">
+      {% comment %}
+      <!-- Chats are disabled for now, no time to moderate the chat -->
       <li><a title="A place where you can chat with everyone else on the site!" href="{% url "main:chat_center" %}">Chat Center</a></li>
+      {% endcomment %}
       <li><a title="Play a fun maze game!" href="{% url "main:maze_game" %}">Maze Game</a></li>
     </ul>
   </li>
