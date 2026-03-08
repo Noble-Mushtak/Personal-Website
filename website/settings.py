@@ -11,8 +11,12 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 import os
+import pymysql
 from pathlib import Path
 from django.urls import get_resolver
+
+# Needed for MySQLdb library: https://stackoverflow.com/a/73024476
+pymysql.install_as_MySQLdb()
 
 # Use mock_secrets when running this code locally
 if os.environ.get('DJANGO_LOCAL', '') == "True":

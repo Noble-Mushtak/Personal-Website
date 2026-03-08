@@ -5,6 +5,7 @@ django-htmlmin==0.11.0
 django-webmaster-verification==0.4.2
 html5lib==1.1
 mysqlclient==2.0.3
+PyMySQL==1.1.0
 pytz==2020.5
 six==1.15.0
 soupsieve==2.1
